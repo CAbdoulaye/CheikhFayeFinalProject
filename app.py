@@ -1,11 +1,13 @@
 from flask import Flask, render_template, redirect, url_for, flash, request
 from werkzeug.security import generate_password_hash, check_password_hash
+from db import init_app, get_db, register_user, login_user, add_review
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
+app.config['DATABASE'] = 'users.db'  # Update this with your actual database path
 
-# ... (your other code)
-
+# Initialize the database
+init_app(app)
 
 # Form functions
 def validate_registration_form(username, email, password, confirm_password):
@@ -40,8 +42,6 @@ def validate_review_form(movie_title, review_text):
     # Add more validation as needed
 
     return True
-
-# ... (your other code)
 
 
 # Routes for user authentication
@@ -91,7 +91,6 @@ def login():
                 return response
             else:
                 flash('Login failed. Check your username and password.', 'danger')
-
     return render_template('login.html')
 
 
@@ -114,15 +113,18 @@ def add_review_route():
             add_review(user_id, *form)
             flash('Review added successfully!', 'success')
             return redirect(url_for('index'))
-
     return render_template('add_review.html')
+
+
+@app.route('/logout')
+def logout():
+    # Logout logic
+    return render_template('logout.html')
 
 
 @app.route('/')
 def index():
     return render_template('index.html')  # Adjust the template name as needed
-
-# ... (your other code)
 
 
 if __name__ == '__main__':
