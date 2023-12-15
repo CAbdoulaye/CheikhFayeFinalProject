@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block title %}Movies - Movie Review Website{% endblock %}
+
+{% block content %}
+    <h2>Movie List</h2>
+    <div id="cardsDiv">
+        <div class="card">
+              <img src={{ url_for('static', filename='images/titanic.jpg') }} class="card-img-top" alt="titanic">
+              <div class="card-body">
+                    <h5 class="card-title">Titanic</h5>
+                    <p class="card-text">Ill-fated Titanic voyage: love blooms between Jack and Rose, ship sinks, tragedy unfolds, Rose survives, poignant romance remembered.</p>
+                    <a href="#" class="btn btn-primary moviePageButton">Reviews</a>
+              </div>
+        </div>
+        <div class="card">
+              <img src={{ url_for('static', filename='images/jaws.jpg') }} class="card-img-top" alt="jaws">
+              <div class="card-body">
+                    <h5 class="card-title">Jaws</h5>
+                    <p class="card-text">Shark terrorizes Amity Island, Chief Brody and crew hunt it, suspenseful battles, iconic score, Spielberg's blockbuster masterpiece.</p>
+                    <a href="#" class="btn btn-primary moviePageButton">Reviews</a>
+              </div>
+        </div>
+        <div class="card">
+              <img src={{ url_for('static', filename='images/avatar.jpg') }} class="card-img-top" alt="avatar">
+              <div class="card-body">
+                    <h5 class="card-title">Avatar</h5>
+                    <p class="card-text">On Pandora, marine Jake bonds with Na'vi, clashes with corporate greed, epic nature battles, groundbreaking visuals, Cameron's triumph.</p>
+                    <a href="#" class="btn btn-primary moviePageButton">Reviews</a>
+              </div>
+        </div>
+        <div class="card">
+              <img src={{ url_for('static', filename='images/avengers.jpg') }} class="card-img-top" alt="avengers">
+              <div class="card-body">
+                    <h5 class="card-title">Avengers</h5>
+                    <p class="card-text">Loki threatens Earth, Nick Fury assembles superheroes, epic battle in New York, iconic team-up, Marvel's cinematic universe cornerstone.</p>
+                    <a href="#" class="btn btn-primary moviePageButton">Reviews</a>
+              </div>
+        </div>
+        <div class="card">
+              <img src={{ url_for('static', filename='images/homeAlone.jpg') }} class="card-img-top" alt="homeAlone">
+              <div class="card-body">
+                    <h5 class="card-title">Home Alone</h5>
+                    <p class="card-text">Kevin McCallister left behind, foils burglars with clever traps, heartwarming holiday comedy, family reconciliation.</p>
+                    <a href="#" class="btn btn-primary moviePageButton">Reviews</a>
+              </div>
+        </div>
+        <div class="card">
+              <img src={{ url_for('static', filename='images/jurassicPark.jpg') }} class="card-img-top" alt="Jurassic Park">
+              <div class="card-body">
+                    <h5 class="card-title">Jurassic Park</h5>
+                    <p class="card-text">Island theme park with cloned dinosaurs, chaos erupts, thrilling adventure, Spielberg's blockbuster, groundbreaking CGI, dinosaur spectacle.</p>
+                    <a href="#" class="btn btn-primary moviePageButton">Reviews</a>
+              </div>
+        </div>
+        <div class="card">
+              <img src={{ url_for('static', filename='images/lionKing.jpg') }} class="card-img-top" alt="lionKing">
+              <div class="card-body">
+                    <h5 class="card-title">Lion King</h5>
+                    <p class="card-text">Simba's journey from exile to king, Hamlet-inspired, memorable characters, iconic soundtrack, Disney animated classic, Circle of Life.</p>
+                    <a href="#" class="btn btn-primary moviePageButton">Reviews</a>
+              </div>
+        </div>
+        <div class="card">
+              <img src={{ url_for('static', filename='images/shrek.jpg') }} class="card-img-top" alt="shrek">
+              <div class="card-body">
+                    <h5 class="card-title">Shrek</h5>
+                    <p class="card-text">Ogre Shrek's reluctant hero journey, comical sidekick Donkey, rescues Princess Fiona, fairy tale satire, irreverent humor, animated success.</p>
+                    <a href="#" class="btn btn-primary moviePageButton">Reviews</a>
+              </div>
+        </div>
+        <div class="card">
+              <img src={{ url_for('static', filename='images/starWars.jpg') }} class="card-img-top" alt="Star Wars">
+              <div class="card-body">
+                    <h5 class="card-title">Star Wars</h5>
+                    <p class="card-text"> Epic space saga, Jedi vs. Sith, rebellion against Empire, iconic characters, the Force, George Lucas's sci-fi masterpiece.</p>
+                    <a href="#" class="btn btn-primary moviePageButton">Reviews</a>
+              </div>
+        </div>
+        <div class="card">
+              <img src={{ url_for('static', filename='images/theDarkKnight.jpg') }} class="card-img-top" alt="the Dark Knight image">
+              <div class="card-body">
+                    <h5 class="card-title">The Dark Knight</h5>
+                    <p class="card-text">Batman faces Joker's chaos, moral dilemmas, Heath Ledger's iconic performance, Nolan's gritty superhero masterpiece.</p>
+                    <a href="#" class="btn btn-primary moviePageButton">Reviews</a>
+              </div>
+        </div>
+        <div class="card">
+              <img src={{ url_for('static', filename='images/jurassicWorld.jpg') }} class="card-img-top" alt="jurassicWorld image">
+              <div class="card-body">
+                    <h5 class="card-title">Jurassic World</h5>
+                    <p class="card-text">Dinosaur theme park, genetic engineering goes awry, thrilling chaos, Velociraptor partnership, blockbuster sequel to "Jurassic Park."</p>
+                    <a href="#" class="btn btn-primary moviePageButton">Reviews</a>
+              </div>
+        </div>
+    </div>
+{% endblock %}

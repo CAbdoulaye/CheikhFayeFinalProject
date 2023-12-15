@@ -1,11 +1,25 @@
 from flask import Flask, render_template, redirect, url_for, flash, request
 from werkzeug.security import generate_password_hash, check_password_hash
-from db import create_tables, register_user, login_user, add_review
+from db import create_tables, register_user, login_user, add_review, get_reviews_by_movie
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
 
-# ... (your other code)
+
+moviesDict = {
+    "Titanic" : {
+        "link" : "url_for('static', filename='images/titanic.jpg')",
+        "description" : "The RMS Titanic, a British passenger liner, met a tragic fate on April 15, 1912. During its maiden voyage from Southampton to New York, the ship struck an iceberg in the North Atlantic Ocean and sank. The disaster resulted in the loss of over 1,500 lives. Despite being equipped with advanced safety features for its time, inadequate lifeboat capacity and a lack of efficient communication contributed to the high casualty toll. The sinking of the Titanic remains one of the most infamous maritime disasters in history, prompting improvements in maritime safety regulations and capturing the public's imagination for decades to come."
+    },
+    "Jaws" : {
+        "link" : "url_for('static', filename='images/jaws.jpg')",
+        "description" : "Jaws is a 1975 thriller film directed by Steven Spielberg. Based on Peter Benchley's novel, it follows Police Chief Martin Brody (Roy Scheider), marine biologist Matt Hooper (Richard Dreyfuss), and shark hunter Quint (Robert Shaw) as they attempt to hunt down a great white shark that is terrorizing the fictional resort town of Amity Island. The film became a blockbuster and is known for its suspenseful atmosphere and the iconic music score composed by John Williams. Jaws not only defined the summer blockbuster but also instilled a fear of sharks in popular culture, leaving a lasting impact on cinema."
+    },
+    "Avatar" : {
+        "link" : "url_for('static', filename='images/avatar.jpg')",
+        "description" : "Avatar is a 2009 science fiction film directed by James Cameron. Set in the mid-22nd century on the fictional moon Pandora, the story follows Jake Sully (played by Sam Worthington), a paralyzed former Marine who becomes an Avatar operator. Avatars are genetically engineered human-Na'vi hybrids used to interact with the indigenous Na'vi people on Pandora. As Jake infiltrates the Na'vi community, he finds himself torn between loyalty to humanity and empathy for the Na'vi. The film is known for its groundbreaking visual effects, 3D technology, and immersive world-building. Avatar became the highest-grossing film of all time until it was surpassed by Avengers: Endgame in 2019."
+    }
+}
 
 
 # Form functions
@@ -138,6 +152,26 @@ def index():
 # ... (your other code)
 
 
+@app.route('/movies')
+def movie_list():
+    return render_template('movie_list.html')
+
+
+# Route for displaying reviews for a specific movie
+@app.route('/movie/<movie_title>')
+def movie_reviews(movie_title):
+    # Fetch reviews for the specified movie from the database
+    reviews = get_reviews_by_movie(movie_title)
+    print("name")
+    print(movie_title)
+    info = moviesDict[movie_title]
+    image_link = info["link"]
+    print(image_link)
+    movie_description = info["description"]
+    return render_template('movie_reviews.html', movie_title=movie_title, reviews=reviews, movie_description=movie_description, image_link=image_link)
+
+
 if __name__ == '__main__':
     create_tables()  # Ensure that the database tables are created before running the app
     app.run(debug=True)
+

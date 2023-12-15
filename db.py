@@ -65,6 +65,7 @@ def login_user(username, password):
     else:
         return None  # Login failed
 
+
 def add_review(user_id, movie_title, review_text):
     conn = sqlite3.connect(DATABASE_FILE)
     cursor = conn.cursor()
@@ -72,3 +73,14 @@ def add_review(user_id, movie_title, review_text):
     cursor.execute('INSERT INTO reviews (user_id, movie_title, review_text) VALUES (?, ?, ?)', (user_id, movie_title, review_text))
     conn.commit()
     conn.close()
+
+
+def get_reviews_by_movie(movie_title):
+    conn = sqlite3.connect(DATABASE_FILE)
+    cursor = conn.cursor()
+
+    cursor.execute('SELECT review_text FROM reviews WHERE movie_title=?', (movie_title,))
+    reviews = cursor.fetchall()
+
+    conn.close()
+    return reviews
