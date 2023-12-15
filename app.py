@@ -1,13 +1,12 @@
 from flask import Flask, render_template, redirect, url_for, flash, request
 from werkzeug.security import generate_password_hash, check_password_hash
-from db import init_app, get_db, register_user, login_user, add_review
+from db import create_tables, register_user, login_user, add_review
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
-app.config['DATABASE'] = 'users.db'  # Update this with your actual database path
 
-# Initialize the database
-init_app(app)
+# ... (your other code)
+
 
 # Form functions
 def validate_registration_form(username, email, password, confirm_password):
@@ -43,7 +42,11 @@ def validate_review_form(movie_title, review_text):
 
     return True
 
+# ... (your other code)
 
+
+# Routes for user authentication
+# Routes for user authentication
 # Routes for user authentication
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -55,11 +58,12 @@ def register():
             request.form['username'],
             request.form['email'],
             request.form['password'],
-            request.form['confirm_password']
+            request.form['confirm_password']  # Include the confirm_password field
         )
 
         if validate_registration_form(*form):
-            result = register_user(*form)
+            # Update the function call to pass all four parameters
+            result = register_user(form[0], form[1], form[2], form[3])
 
             if result:
                 flash('Registration successful! You can now log in.', 'success')
@@ -91,6 +95,7 @@ def login():
                 return response
             else:
                 flash('Login failed. Check your username and password.', 'danger')
+
     return render_template('login.html')
 
 
@@ -113,19 +118,26 @@ def add_review_route():
             add_review(user_id, *form)
             flash('Review added successfully!', 'success')
             return redirect(url_for('index'))
+
     return render_template('add_review.html')
 
 
 @app.route('/logout')
 def logout():
-    # Logout logic
-    return render_template('logout.html')
+    # Clear the user_id cookie to log the user out
+    response = redirect(url_for('index'))
+    response.delete_cookie('user_id')
+    flash('Logout successful!', 'success')
+    return response
 
 
 @app.route('/')
 def index():
     return render_template('index.html')  # Adjust the template name as needed
 
+# ... (your other code)
+
 
 if __name__ == '__main__':
+    create_tables()  # Ensure that the database tables are created before running the app
     app.run(debug=True)
