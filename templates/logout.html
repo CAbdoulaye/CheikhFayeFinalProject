@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Logout - My App{% endblock %}
+
+{% block header %}Logout{% endblock %}
+
+{% block content %}
+    <h2>User Logout</h2>
+    <p>You have been successfully logged out.</p>
+    <p>Continue browsing <a href="{{ url_for('index') }}">here</a>.</p>
+{% endblock %}
