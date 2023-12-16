@@ -195,6 +195,7 @@ def movie_list():
 def movie_reviews(movie_title):
     # Fetch reviews for the specified movie from the database
     reviews = get_reviews_by_movie(movie_title)
+    reviews = [review[0] for review in reviews]
     print("name")
     print(movie_title)
     info = moviesDict[movie_title]
