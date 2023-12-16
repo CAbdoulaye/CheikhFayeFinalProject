@@ -3,6 +3,7 @@
 {% block title %}Home - My App{% endblock %}
 
 {% block content %}
+    <div><img src={{ url_for('static', filename='images/HomepageScreen.webp') }} alt="homeScreen" style="width: 100%; padding-bottom: 100px"></div>
     <div class="jumbotron">
         <h1 class="display-4">Welcome to Recap&Review!</h1>
         <p>Welcome to Recap&Review, your go-to destination for immersive movie recaps and reviews. In a world where the cinematic landscape is vast and diverse, CineSynth serves as a curated haven for cinephiles and casual viewers alike. Our website is designed to provide insightful, engaging, and spoiler-free content that enhances your movie-watching experience.</p>
@@ -19,5 +20,4 @@
         <h2>In-Depth Reviews:</h2>
         <p>Our team of seasoned movie enthusiasts and critics meticulously craft in-depth reviews that transcend mere ratings. We delve into the nuances of cinematography, storytelling, performances, and overall impact. Every review on CineSynth is an invitation to engage in a thoughtful discussion about the art and craft of filmmaking. We recognize that each movie is a unique piece of storytelling, and our reviews reflect a genuine passion for the cinematic medium.</p>
     </div>
-    <!-- Add more content as needed -->
 {% endblock %}
