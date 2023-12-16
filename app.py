@@ -8,15 +8,47 @@ app.config['SECRET_KEY'] = 'your_secret_key'
 
 moviesDict = {
     "Titanic" : {
-        "link" : "url_for('static', filename='images/titanic.jpg')",
+        "link" : "titanic",
         "description" : "The RMS Titanic, a British passenger liner, met a tragic fate on April 15, 1912. During its maiden voyage from Southampton to New York, the ship struck an iceberg in the North Atlantic Ocean and sank. The disaster resulted in the loss of over 1,500 lives. Despite being equipped with advanced safety features for its time, inadequate lifeboat capacity and a lack of efficient communication contributed to the high casualty toll. The sinking of the Titanic remains one of the most infamous maritime disasters in history, prompting improvements in maritime safety regulations and capturing the public's imagination for decades to come."
     },
     "Jaws" : {
-        "link" : "url_for('static', filename='images/jaws.jpg')",
+        "link" : "jaws",
         "description" : "Jaws is a 1975 thriller film directed by Steven Spielberg. Based on Peter Benchley's novel, it follows Police Chief Martin Brody (Roy Scheider), marine biologist Matt Hooper (Richard Dreyfuss), and shark hunter Quint (Robert Shaw) as they attempt to hunt down a great white shark that is terrorizing the fictional resort town of Amity Island. The film became a blockbuster and is known for its suspenseful atmosphere and the iconic music score composed by John Williams. Jaws not only defined the summer blockbuster but also instilled a fear of sharks in popular culture, leaving a lasting impact on cinema."
     },
     "Avatar" : {
-        "link" : "url_for('static', filename='images/avatar.jpg')",
+        "link" : "avatar",
+        "description" : "Avatar is a 2009 science fiction film directed by James Cameron. Set in the mid-22nd century on the fictional moon Pandora, the story follows Jake Sully (played by Sam Worthington), a paralyzed former Marine who becomes an Avatar operator. Avatars are genetically engineered human-Na'vi hybrids used to interact with the indigenous Na'vi people on Pandora. As Jake infiltrates the Na'vi community, he finds himself torn between loyalty to humanity and empathy for the Na'vi. The film is known for its groundbreaking visual effects, 3D technology, and immersive world-building. Avatar became the highest-grossing film of all time until it was surpassed by Avengers: Endgame in 2019."
+    },
+    "Avengers" : {
+        "link" : "avengers",
+        "description" : "Avatar is a 2009 science fiction film directed by James Cameron. Set in the mid-22nd century on the fictional moon Pandora, the story follows Jake Sully (played by Sam Worthington), a paralyzed former Marine who becomes an Avatar operator. Avatars are genetically engineered human-Na'vi hybrids used to interact with the indigenous Na'vi people on Pandora. As Jake infiltrates the Na'vi community, he finds himself torn between loyalty to humanity and empathy for the Na'vi. The film is known for its groundbreaking visual effects, 3D technology, and immersive world-building. Avatar became the highest-grossing film of all time until it was surpassed by Avengers: Endgame in 2019."
+    },
+    "Home Alone" : {
+        "link" : "homeAlone",
+        "description" : "Avatar is a 2009 science fiction film directed by James Cameron. Set in the mid-22nd century on the fictional moon Pandora, the story follows Jake Sully (played by Sam Worthington), a paralyzed former Marine who becomes an Avatar operator. Avatars are genetically engineered human-Na'vi hybrids used to interact with the indigenous Na'vi people on Pandora. As Jake infiltrates the Na'vi community, he finds himself torn between loyalty to humanity and empathy for the Na'vi. The film is known for its groundbreaking visual effects, 3D technology, and immersive world-building. Avatar became the highest-grossing film of all time until it was surpassed by Avengers: Endgame in 2019."
+    },
+    "Jurassic Park" : {
+        "link" : "jurassicPark",
+        "description" : "Avatar is a 2009 science fiction film directed by James Cameron. Set in the mid-22nd century on the fictional moon Pandora, the story follows Jake Sully (played by Sam Worthington), a paralyzed former Marine who becomes an Avatar operator. Avatars are genetically engineered human-Na'vi hybrids used to interact with the indigenous Na'vi people on Pandora. As Jake infiltrates the Na'vi community, he finds himself torn between loyalty to humanity and empathy for the Na'vi. The film is known for its groundbreaking visual effects, 3D technology, and immersive world-building. Avatar became the highest-grossing film of all time until it was surpassed by Avengers: Endgame in 2019."
+    },
+    "Lion King" : {
+        "link" : "lionKing",
+        "description" : "Avatar is a 2009 science fiction film directed by James Cameron. Set in the mid-22nd century on the fictional moon Pandora, the story follows Jake Sully (played by Sam Worthington), a paralyzed former Marine who becomes an Avatar operator. Avatars are genetically engineered human-Na'vi hybrids used to interact with the indigenous Na'vi people on Pandora. As Jake infiltrates the Na'vi community, he finds himself torn between loyalty to humanity and empathy for the Na'vi. The film is known for its groundbreaking visual effects, 3D technology, and immersive world-building. Avatar became the highest-grossing film of all time until it was surpassed by Avengers: Endgame in 2019."
+    },
+    "Shrek" : {
+        "link" : "shrek",
+        "description" : "Avatar is a 2009 science fiction film directed by James Cameron. Set in the mid-22nd century on the fictional moon Pandora, the story follows Jake Sully (played by Sam Worthington), a paralyzed former Marine who becomes an Avatar operator. Avatars are genetically engineered human-Na'vi hybrids used to interact with the indigenous Na'vi people on Pandora. As Jake infiltrates the Na'vi community, he finds himself torn between loyalty to humanity and empathy for the Na'vi. The film is known for its groundbreaking visual effects, 3D technology, and immersive world-building. Avatar became the highest-grossing film of all time until it was surpassed by Avengers: Endgame in 2019."
+    },
+    "Star Wars" : {
+        "link" : "starWars",
+        "description" : "Avatar is a 2009 science fiction film directed by James Cameron. Set in the mid-22nd century on the fictional moon Pandora, the story follows Jake Sully (played by Sam Worthington), a paralyzed former Marine who becomes an Avatar operator. Avatars are genetically engineered human-Na'vi hybrids used to interact with the indigenous Na'vi people on Pandora. As Jake infiltrates the Na'vi community, he finds himself torn between loyalty to humanity and empathy for the Na'vi. The film is known for its groundbreaking visual effects, 3D technology, and immersive world-building. Avatar became the highest-grossing film of all time until it was surpassed by Avengers: Endgame in 2019."
+    },
+    "The Dark Knight" : {
+        "link" : "theDarkKnight",
+        "description" : "Avatar is a 2009 science fiction film directed by James Cameron. Set in the mid-22nd century on the fictional moon Pandora, the story follows Jake Sully (played by Sam Worthington), a paralyzed former Marine who becomes an Avatar operator. Avatars are genetically engineered human-Na'vi hybrids used to interact with the indigenous Na'vi people on Pandora. As Jake infiltrates the Na'vi community, he finds himself torn between loyalty to humanity and empathy for the Na'vi. The film is known for its groundbreaking visual effects, 3D technology, and immersive world-building. Avatar became the highest-grossing film of all time until it was surpassed by Avengers: Endgame in 2019."
+    },
+    "Jurassic World" : {
+        "link" : "jurassicWorld",
         "description" : "Avatar is a 2009 science fiction film directed by James Cameron. Set in the mid-22nd century on the fictional moon Pandora, the story follows Jake Sully (played by Sam Worthington), a paralyzed former Marine who becomes an Avatar operator. Avatars are genetically engineered human-Na'vi hybrids used to interact with the indigenous Na'vi people on Pandora. As Jake infiltrates the Na'vi community, he finds himself torn between loyalty to humanity and empathy for the Na'vi. The film is known for its groundbreaking visual effects, 3D technology, and immersive world-building. Avatar became the highest-grossing film of all time until it was surpassed by Avengers: Endgame in 2019."
     }
 }
@@ -114,8 +146,9 @@ def login():
 
 
 # Route for adding reviews
-@app.route('/add_review', methods=['GET', 'POST'])
-def add_review_route():
+# Route for adding reviews
+@app.route('/add_review/<movie_title>', methods=['GET', 'POST'])
+def add_review_route(movie_title):
     if 'user_id' not in request.cookies:
         flash('You need to log in to add a review.', 'danger')
         return redirect(url_for('login'))
@@ -124,7 +157,7 @@ def add_review_route():
 
     if request.method == 'POST':
         form = (
-            request.form['movie_title'],
+            movie_title,  # Pass the movie_title from the URL
             request.form['review_text']
         )
 
@@ -133,7 +166,7 @@ def add_review_route():
             flash('Review added successfully!', 'success')
             return redirect(url_for('index'))
 
-    return render_template('add_review.html')
+    return render_template('add_review.html', movie_title=movie_title)
 
 
 @app.route('/logout')
@@ -168,8 +201,8 @@ def movie_reviews(movie_title):
     image_link = info["link"]
     print(image_link)
     movie_description = info["description"]
-    return render_template('movie_reviews.html', movie_title=movie_title, reviews=reviews, movie_description=movie_description, image_link=image_link)
-
+    arr = [movie_title, image_link, movie_description, reviews]
+    return render_template('movie_reviews.html', arr=arr)
 
 if __name__ == '__main__':
     create_tables()  # Ensure that the database tables are created before running the app

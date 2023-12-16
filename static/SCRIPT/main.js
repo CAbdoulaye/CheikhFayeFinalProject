@@ -12,3 +12,4 @@ function sendMovieNameToFlask(clickedMovieButton){
     console.log(name)
     window.location.href = `/movie/${name}`;
 }
+
